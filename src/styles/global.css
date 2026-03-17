@@ -215,4 +215,8 @@ ul {
     width: 100%;
     max-width: 320px;
   }
+
+  .text-center {
+    text-align: left;
+  }
 }
