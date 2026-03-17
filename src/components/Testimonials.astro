@@ -1,0 +1,298 @@
+---
+const testimonials = [
+  {
+    text: "As a solo traveler, Maceda surf hostel was the place I didn't know I needed until I arrived. The combination of the rural surroundings, surf lessons, yoga, and social evenings was simply fun and relaxing in itself, and the people there — both the staff and the other travelers — took the experience to a whole different level. I'll miss it and definitely want to come back.",
+    name: 'Elitzur Sa\'adon',
+    origin: 'Israel',
+  },
+  {
+    text: "I came for a week and nearly stayed for a month. The waves are uncrowded, the coaching is genuinely world-class, and the evenings around the bonfire felt like being with old friends. João Diogo and the team create something really special here — it's not a business, it's a home.",
+    name: 'Sophie Kramer',
+    origin: 'Germany',
+  },
+  {
+    text: "I've been to surf camps across Portugal, Morocco and Bali. Maceda is the only one I've returned to three times. There's no ego, no pressure — just pure stoke in the water and the best home-cooked meals I've ever had at a camp. André's bonfires are legendary.",
+    name: 'Tom Birchall',
+    origin: 'United Kingdom',
+  },
+  {
+    text: "My partner and I booked five nights as a break from work burnout. We left feeling completely reset. The forest setting, the sound of the ocean at night, yoga in the morning… it's the opposite of everything stressful. Kate made us feel welcome from minute one.",
+    name: 'Camille Dubois',
+    origin: 'France',
+  },
+  {
+    text: "I'd never surfed before and was honestly nervous. By day three I was standing up and grinning like an idiot. The coaches are patient, encouraging and really know what they're doing. The whole vibe is anti-judgement — exactly what I needed. Already planning my next trip.",
+    name: 'Lars Henriksen',
+    origin: 'Denmark',
+  },
+];
+---
+
+<section class="testimonials" id="testimonials">
+  <div class="testimonials__overlay"></div>
+  <div class="testimonials__inner">
+    <h2>Testimonials</h2>
+    <p class="testimonials__subtitle">Loved by surfers from all over the world</p>
+
+    <div class="slider" id="testimonial-slider">
+      <div class="slider__track" id="slider-track">
+        {testimonials.map((t) => (
+          <div class="slider__slide">
+            <blockquote>
+              <p>"{t.text}"</p>
+              <cite>{t.name} <span>— {t.origin}</span></cite>
+            </blockquote>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="slider__controls">
+      <button class="slider__arrow slider__arrow--prev" id="prev" aria-label="Previous testimonial">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="slider__dots" id="dots">
+        {testimonials.map((_, i) => (
+          <button class={`slider__dot ${i === 0 ? 'active' : ''}`} data-index={i} aria-label={`Go to testimonial ${i + 1}`} />
+        ))}
+      </div>
+      <button class="slider__arrow slider__arrow--next" id="next" aria-label="Next testimonial">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+
+    <a href="https://share.google/PkG5sdHZooq4VZ3OX" target="_blank" rel="noopener" class="google-badge">
+      <img src="/images/reviews-google.png" alt="Google Reviews" width="200" loading="lazy" />
+    </a>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    position: relative;
+    padding: 5rem 1.5rem;
+    text-align: center;
+    background: url('/images/testimonials-banner.jpg') center/cover no-repeat fixed;
+    overflow: hidden;
+  }
+
+  .testimonials__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(27, 42, 61, 0.88);
+  }
+
+  .testimonials__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    color: #fff;
+    margin-bottom: 0.25rem;
+  }
+
+  .testimonials__subtitle {
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  /* Slider */
+  .slider {
+    overflow: hidden;
+    cursor: grab;
+  }
+
+  .slider:active {
+    cursor: grabbing;
+  }
+
+  .slider__track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+
+  .slider__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    padding: 0 1rem;
+  }
+
+  blockquote p {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.85;
+    font-style: italic;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  cite {
+    display: block;
+    color: var(--color-accent);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  cite span {
+    color: rgba(255, 255, 255, 0.45);
+    font-weight: 500;
+  }
+
+  /* Controls */
+  .slider__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .slider__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .slider__arrow:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: rgba(232, 114, 58, 0.1);
+  }
+
+  .slider__dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .slider__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0;
+  }
+
+  .slider__dot.active {
+    background: var(--color-accent);
+    transform: scale(1.2);
+  }
+
+  .slider__dot:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .google-badge {
+    display: inline-block;
+    margin-top: 2rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+
+  .google-badge:hover {
+    opacity: 1;
+  }
+
+  .google-badge img {
+    display: inline-block;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 768px) {
+    blockquote p {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  const track = document.getElementById('slider-track') as HTMLElement;
+  const dots = document.querySelectorAll('.slider__dot');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+  const slider = document.getElementById('testimonial-slider') as HTMLElement;
+  const total = dots.length;
+  let current = 0;
+  let autoplayTimer: ReturnType<typeof setInterval>;
+  let startX = 0;
+  let isDragging = false;
+
+  function goTo(index: number) {
+    current = ((index % total) + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = setInterval(next, 5000);
+  }
+
+  function stopAutoplay() {
+    clearInterval(autoplayTimer);
+  }
+
+  nextBtn?.addEventListener('click', () => { next(); startAutoplay(); });
+  prevBtn?.addEventListener('click', () => { prev(); startAutoplay(); });
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => { goTo(i); startAutoplay(); });
+  });
+
+  // Touch / drag
+  slider?.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    stopAutoplay();
+  }, { passive: true });
+
+  slider?.addEventListener('touchend', (e) => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? next() : prev();
+    }
+    startAutoplay();
+  });
+
+  slider?.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    stopAutoplay();
+  });
+
+  window.addEventListener('mouseup', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    const diff = startX - e.clientX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? next() : prev();
+    }
+    startAutoplay();
+  });
+
+  // Pause on hover
+  slider?.addEventListener('mouseenter', stopAutoplay);
+  slider?.addEventListener('mouseleave', startAutoplay);
+
+  startAutoplay();
+</script>

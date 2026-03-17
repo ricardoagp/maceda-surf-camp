@@ -1,0 +1,66 @@
+---
+---
+
+<section class="hero">
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <h1>Surf Better, Feel Better,<br>Live Better</h1>
+    <p>Maceda's original eco surf camp since 2011</p>
+    <p class="hero__highlight"><strong>Bookings are now open for stays from 10 April onwards.</strong></p>
+    <a href="#book" class="btn">Ready to Begin?</a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('/images/testimonials-banner.jpg') center/cover no-repeat;
+    padding: 7rem 1.5rem 4rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 65vh;
+      padding: 6rem 1.5rem 3rem;
+    }
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(26, 122, 109, 0.45) 0%, rgba(27, 42, 61, 0.75) 100%);
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+  }
+
+  .hero h1 {
+    color: var(--color-white);
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero__highlight {
+    margin-bottom: 2rem !important;
+  }
+
+  .hero .btn {
+    font-size: 1rem;
+    padding: 1rem 2.5rem;
+  }
+</style>

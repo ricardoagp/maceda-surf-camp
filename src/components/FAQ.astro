@@ -1,0 +1,145 @@
+---
+const faqs = [
+  {
+    question: 'Do I need any surfing experience?',
+    answer: 'No. Most guests arrive as complete beginners. Lessons run daily and are calm, supportive and adapted to your level. The focus is on learning safely, building confidence and actually enjoying yourself in the water.',
+  },
+  {
+    question: 'Do you also offer yoga classes?',
+    answer: 'Yes! We offer regular yoga classes for all levels. These are optional extras. You can organise with our team upon arrival.',
+  },
+  {
+    question: 'What makes your surf coaching different?',
+    answer: 'We focus on strong fundamentals from day one. With 33 years of coaching experience and methods rooted in Surfing Life Club, our teaching builds proper technique, not just quick wins.',
+  },
+  {
+    question: 'How eco-friendly is the camp?',
+    answer: "Maceda was originally built using reclaimed materials and designed to blend into the natural surroundings. We aim to keep things simple and low-impact. This encourages conscious water use, shared resources and respect for the forest and ocean around us. Nature isn't a backdrop here. It's the foundation.",
+  },
+  {
+    question: "What happens if there aren't waves or conditions aren't good?",
+    answer: "If conditions aren't beginner-friendly at the main beach, we head to a more sheltered spot. When surfing isn't possible, there are easy alternatives like waterfall trips, stand-up paddleboarding or simply slowing down around the camp.",
+  },
+  {
+    question: 'What kinds of activities are included during the week?',
+    answer: 'Expect relaxed, social activities like shared dinners, bonfires, board games, movie nights and wine or cheese tastings. Optional extras such as yoga, pizza nights, waterfall trips and massages vary by week and mood.',
+  },
+  {
+    question: 'Do you offer vegetarian, vegan or gluten-free food?',
+    answer: 'Yes. Breakfast always includes vegetarian, vegan and gluten-free options like fruit, cereals, oat porridge, gluten-free bread and spreads, plus good coffee and tea.',
+  },
+  {
+    question: 'Can I progress beyond beginner level?',
+    answer: 'Absolutely. While many guests start as complete beginners, we also coach intermediate and advanced surfers.',
+  },
+  {
+    question: 'Do I need to book surf lessons or yoga in advance?',
+    answer: "No need. Most guests decide once they arrive. Surf lessons are usually arranged the day before and yoga can be booked on the same day, depending on availability.",
+  },
+  {
+    question: 'Is there a supermarket nearby?',
+    answer: "Yes. There's a supermarket about a five-minute walk from the camp for snacks, drinks and anything you might need.",
+  },
+  {
+    question: "What if I'm travelling solo?",
+    answer: "You'll be in good company. Many guests arrive alone and say it's easy to connect here without awkwardness. Shared meals, surf sessions and relaxed evenings make things feel natural, not forced.",
+  },
+  {
+    question: 'How do I get to the camp?',
+    answer: 'Maceda Surf Camp is around 40 minutes from Porto. You can arrive by car or train. The nearest station, Carvalheira-Maceda, is just a short walk away. Clear arrival details are sent after booking.',
+  },
+  {
+    question: "What's the accommodation like?",
+    answer: "Simple, cosy and nature-based. Options include shared rooms, private rooms and glamping tents. Everything is designed for comfort, good sleep and a relaxed, homey feel rather than luxury.",
+  },
+  {
+    question: 'Is there more to do besides surfing?',
+    answer: 'Definitely. You can join outdoor yoga, walk forest trails, relax by the bonfire or explore nearby villages and nature spots. Be active or take it slow… both are very welcome here!',
+  },
+];
+---
+
+<section class="section faq-section" id="faqs">
+  <div class="container">
+    <h2 class="text-center">FAQ</h2>
+    <div class="faq-list">
+      {faqs.map((faq, i) => (
+        <details class="faq-item" open={i === 0}>
+          <summary class="faq-question">
+            <span>{faq.question}</span>
+            <svg class="faq-icon" viewBox="0 0 320 512" width="16" height="16" fill="currentColor">
+              <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+    <div class="text-center" style="margin-top: 2rem;">
+      <a href="#book" class="btn">Book Now!</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-sand) 100%);
+  }
+
+  .faq-section h2 {
+    margin-bottom: 2.5rem;
+  }
+
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background: var(--color-white);
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--color-dark);
+    list-style: none;
+    transition: color 0.3s;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question:hover {
+    color: var(--color-primary);
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    margin-left: 1rem;
+    transition: transform 0.3s;
+    color: var(--color-primary);
+  }
+
+  details[open] .faq-icon {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 1.5rem 1.25rem;
+    color: var(--color-text);
+    line-height: 1.7;
+  }
+</style>

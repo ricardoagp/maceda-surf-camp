@@ -1,0 +1,136 @@
+---
+---
+
+<footer class="footer">
+  <div class="footer__main">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="/">
+          <img src="/images/logo-footer.png" alt="Maceda Surf Camp" width="200" loading="lazy" />
+        </a>
+      </div>
+      <div class="footer__address">
+        <p>Rua da Charneca 647</p>
+        <p>3885-722 Maceda – Portugal</p>
+      </div>
+      <div class="footer__contact">
+        <p>9am – 20pm | 7 days a week</p>
+        <p><a href="mailto:info@macedasurfcamp.eu">info@macedasurfcamp.eu</a></p>
+        <p><a href="tel:+351918931119" class="footer__phone">Call +351 918 931 119</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="footer__bottom-inner">
+      <p>Developed by MOVI &copy; 2026 Maceda Surf Camp. All rights reserved</p>
+      <div class="footer__links">
+        <a href="/terms-and-conditions">Terms and Conditions</a>
+        <span>|</span>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <span>|</span>
+        <a href="https://www.livroreclamacoes.pt/inicio/" target="_blank" rel="noopener">Livro de Reclamações</a>
+        <span>|</span>
+        <a href="https://cicap.pt/" target="_blank" rel="noopener">Centro de Arbitragem e RAL</a>
+      </div>
+      <div class="footer__payments">
+        <img src="/images/payments.png" alt="Payment methods" width="200" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer__main {
+    background-color: var(--color-dark);
+    padding: 2.5rem 1.5rem;
+  }
+
+  .footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+
+  .footer__brand img {
+    height: auto;
+  }
+
+  .footer__address p,
+  .footer__contact p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .footer__contact a {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .footer__phone {
+    color: var(--color-accent) !important;
+    font-weight: 600;
+  }
+
+  .footer__bottom {
+    background-color: #101010;
+    padding: 1rem 1.5rem;
+  }
+
+  .footer__bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer__bottom p {
+    color: #3F3F3F;
+    font-size: 0.75rem;
+  }
+
+  .footer__links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer__links a {
+    color: #3F3F3F;
+    font-size: 0.7rem;
+    transition: color 0.3s;
+  }
+
+  .footer__links a:hover {
+    color: #666;
+  }
+
+  .footer__links span {
+    color: #3F3F3F;
+    font-size: 0.7rem;
+  }
+
+  .footer__payments img {
+    height: auto;
+    opacity: 0.6;
+  }
+
+  @media (max-width: 768px) {
+    .footer__inner {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .footer__bottom-inner {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

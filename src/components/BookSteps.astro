@@ -1,0 +1,80 @@
+---
+---
+
+<section class="section steps-section" id="book">
+  <div class="container text-center">
+    <h2>Don't Overthink It. Stay and Surf with Us in Three Easy Steps:</h2>
+    <div class="steps">
+      <div class="step">
+        <span class="step__number">1</span>
+        <p>Pick up your dates</p>
+      </div>
+      <div class="step">
+        <span class="step__number">2</span>
+        <p>Choose how you want to stay</p>
+      </div>
+      <div class="step">
+        <span class="step__number">3</span>
+        <p>Confirm your booking</p>
+      </div>
+    </div>
+    <a href="/booking" class="btn" style="margin-top: 2rem;">Book Now!</a>
+  </div>
+</section>
+
+<style>
+  .steps-section {
+    background: var(--color-white);
+  }
+
+  .steps-section h2 {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .step {
+    padding: 2rem 1.5rem;
+    background: var(--color-bg);
+    border-radius: 12px;
+    transition: transform 0.3s;
+  }
+
+  .step:hover {
+    transform: translateY(-4px);
+  }
+
+  .step__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+
+  .step p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-dark);
+  }
+
+  @media (max-width: 768px) {
+    .steps {
+      grid-template-columns: 1fr;
+      max-width: 300px;
+    }
+  }
+</style>

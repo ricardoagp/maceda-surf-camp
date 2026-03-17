@@ -1,0 +1,158 @@
+---
+const navItems = [
+  { label: 'Home', href: '#' },
+  { label: 'Concept', href: '#concept' },
+  { label: 'Surfing', href: '#surfing' },
+  { label: 'Accommodation', href: '#accommodation' },
+  { label: 'Book', href: '/booking' },
+  { label: 'Faqs', href: '#faqs' },
+];
+---
+
+<header class="header">
+  <div class="header__inner">
+    <a href="/" class="header__logo">
+      <img src="/images/logo.png" alt="Maceda Surf Camp" width="180" height="84" />
+    </a>
+    <nav class="header__nav" id="nav">
+      <ul class="header__menu">
+        {navItems.map(item => (
+          <li><a href={item.href} class="header__link">{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <button class="header__toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(245, 240, 235, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .header__logo img {
+    height: 56px;
+    width: auto;
+  }
+
+  .header__menu {
+    display: flex;
+    gap: 0.25rem;
+    list-style: none;
+  }
+
+  .header__link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--color-dark);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-radius: 4px;
+    transition: color 0.3s, background-color 0.3s;
+  }
+
+  .header__link:hover {
+    color: var(--color-primary);
+    background-color: rgba(26, 122, 109, 0.08);
+  }
+
+  .header__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .header__toggle span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: var(--color-dark);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .header__toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+
+  .header__toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header__toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+
+  @media (max-width: 768px) {
+    .header__toggle {
+      display: flex;
+    }
+
+    .header__nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--color-white);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .header__nav.open {
+      display: block;
+    }
+
+    .header__menu {
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .header__link {
+      padding: 0.75rem 1rem;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav');
+
+  toggle?.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    nav?.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.header__link').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle?.setAttribute('aria-expanded', 'false');
+      nav?.classList.remove('open');
+    });
+  });
+</script>

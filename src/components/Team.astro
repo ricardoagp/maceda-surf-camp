@@ -1,0 +1,152 @@
+---
+const team = [
+  {
+    name: 'Kate',
+    role: 'Host',
+    image: '/images/kate.png',
+    description: '"People-first. Always! I love surfing and the beach life that comes with it. I also grew up near Maceda, and I love travelling and bringing that energy into every guest experience."',
+    email: 'info@macedasurfcamp.eu',
+    phone: '+351918931119',
+  },
+  {
+    name: 'André',
+    role: 'Host',
+    image: '/images/andre.png',
+    description: '"Open, upbeat and always ready to help! I love teaching everything from surfing to surfskate to building a proper bonfire. I\'ve got stories for days… but I\'m always keen to make new ones."',
+    email: 'info@macedasurfcamp.eu',
+    phone: '+351929001938',
+  },
+  {
+    name: 'João Diogo',
+    role: 'Founder',
+    image: '/images/joao-diogo.png',
+    description: '"I\'m João Diogo. I grew up surfing these waves and started Maceda Surf Camp in 2011 out of a love for nature, simple living and real connection. Teaching surfing, sharing meals and swapping stories has always been at the heart of this place."',
+    email: 'info@macedasurfcamp.eu',
+    phone: '+351939270732',
+  },
+];
+---
+
+<section class="section team-section">
+  <div class="container">
+    <div class="team-intro text-center">
+      <h2>Meet Your Maceda Family</h2>
+      <p>
+        Maceda has always been about people and the place that brings them together.
+        Surrounded by forest and ocean, it's a gathering of surfers and nature lovers sharing uncrowded waves,
+        delicious meals and fun evenings in an intimate setting. This isn't staff and guests. It's a small surf family.
+      </p>
+    </div>
+    <div class="team-grid">
+      {team.map(member => (
+        <div class="team-card">
+          <div class="team-card__image">
+            <img src={member.image} alt={member.name} loading="lazy" />
+          </div>
+          <div class="team-card__content">
+            <h3>{member.name}</h3>
+            <span class="team-card__role">{member.role}</span>
+            <p>{member.description}</p>
+            <div class="team-card__socials">
+              <a href={`mailto:${member.email}`} aria-label={`Email ${member.name}`}>
+                <svg viewBox="0 0 512 512" width="20" height="20" fill="currentColor"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg>
+              </a>
+              <a href={`tel:${member.phone}`} aria-label={`Call ${member.name}`}>
+                <svg viewBox="0 0 512 512" width="20" height="20" fill="currentColor"><path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .team-section {
+    background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-sand) 100%);
+  }
+
+  .team-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+  }
+
+  .team-intro p {
+    margin-top: 1rem;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .team-card {
+    background: var(--color-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s;
+  }
+
+  .team-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .team-card__image img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
+
+  .team-card__content {
+    padding: 1.5rem;
+  }
+
+  h3 {
+    margin-bottom: 0.25rem;
+  }
+
+  .team-card__role {
+    display: inline-block;
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+
+  .team-card__content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-text);
+  }
+
+  .team-card__socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .team-card__socials a {
+    color: var(--color-primary);
+    transition: color 0.3s, transform 0.2s;
+  }
+
+  .team-card__socials a:hover {
+    color: var(--color-primary-hover);
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+</style>
