@@ -170,10 +170,13 @@ const testimonials = [
     transition: all 0.3s;
   }
 
-  .slider__arrow:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-    background: rgba(232, 114, 58, 0.1);
+  .slider__arrow:hover,
+  .slider__arrow:focus,
+  .slider__arrow:active {
+    border-color: #fff;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+    outline: none;
   }
 
   .slider__dots {

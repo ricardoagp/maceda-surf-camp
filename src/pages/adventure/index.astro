@@ -1,0 +1,237 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Activities & Adventures — Maceda Surf Camp">
+  <Header />
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <h1>Activities & Adventures</h1>
+      <p>Back-to-nature experiences that are simple, social and fun.</p>
+    </div>
+  </section>
+
+  <main>
+    <!-- Intro -->
+    <section class="section">
+      <div class="container text-center">
+        <div class="intro">
+          <p>When was the last time you sat beneath the stars and shared meaningful conversations while sipping a Portuguese green wine with new friends from different parts of the world?</p>
+          <p>At Maceda, the focus is on back-to-nature experiences — simple, social and unforgettable.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What to Expect -->
+    <section class="section section--alt">
+      <div class="container text-center">
+        <h2>What to Expect</h2>
+        <ul class="activities-list">
+          <li>Portuguese wine and cheese tasting</li>
+          <li>Bonfire nights with marshmallows or Stokbrot</li>
+          <li>Ceramic and creative workshops</li>
+          <li>Waterfall excursions to the lagoons of Serra da Freita</li>
+          <li>Pizza night with cocktails and lively conversations</li>
+          <li>Volleyball, chess and poker tournaments</li>
+          <li>Board games night</li>
+          <li>Grill fish night</li>
+          <li>Plums and Rhum Music Festival (summer only)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Video & Photo Strip -->
+    <div class="media-strip">
+      <video
+        class="media-strip__video"
+        poster="/images/maceda-surf-camp-activity-outdoor.webp"
+        src="https://maceda-surf-camp.b-cdn.net/maceda-activities-jump-lagoa.mp4"
+        muted playsinline preload="none" loop
+      ></video>
+      <img src="/images/maceda-surf-camp-activity-outdoor.webp" alt="Outdoor activities at Maceda Surf Camp" loading="lazy" />
+      <video
+        class="media-strip__video"
+        poster="/images/maceda-surf-camp-activity-outdoor.webp"
+        src="https://maceda-surf-camp.b-cdn.net/maceda-activities-jump-skate.mp4"
+        muted playsinline preload="none" loop
+      ></video>
+    </div>
+
+    <!-- CTA -->
+    <section class="section text-center">
+      <div class="container">
+        <h2>Ready to Experience Maceda?</h2>
+        <p style="margin-bottom: 2rem;">Every week is different. Join us and make it yours.</p>
+        <a href="/#book" class="btn">Book Now!</a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  function initActivities() {
+    function playWhenReady(video: HTMLVideoElement) {
+      if (video.readyState >= 3) {
+        video.play().catch(() => {});
+      } else {
+        video.addEventListener('canplay', () => video.play().catch(() => {}), { once: true });
+      }
+    }
+
+    const preloader = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const video = entry.target as HTMLVideoElement;
+          video.preload = 'auto';
+          preloader.unobserve(video);
+        }
+      });
+    }, { rootMargin: '500px' });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target as HTMLVideoElement;
+        if (entry.isIntersecting) {
+          playWhenReady(video);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('video.media-strip__video').forEach(video => {
+      preloader.observe(video);
+      observer.observe(video);
+
+      video.addEventListener('click', () => {
+        const v = video as HTMLVideoElement;
+        v.currentTime = 0;
+        v.play().catch(() => {});
+      });
+    });
+  }
+
+  initActivities();
+  document.addEventListener('astro:page-load', initActivities);
+</script>
+
+<style>
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('/images/maceda-surf-camp-activity-outdoor.webp') center/cover no-repeat;
+    padding: 7rem 1.5rem 4rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 45vh;
+      padding: 6rem 1.5rem 3rem;
+    }
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(26, 122, 109, 0.45) 0%, rgba(27, 42, 61, 0.75) 100%);
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+  }
+
+  .hero h1 {
+    color: var(--color-white);
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.15rem;
+  }
+
+  /* Intro */
+  .intro {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .intro p {
+    margin-bottom: 1rem;
+  }
+
+  /* Activities List */
+  .activities-list {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  .activities-list li {
+    font-size: 1.05rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .activities-list li::before {
+    content: '· ';
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  /* Media Strip */
+  .media-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .media-strip img,
+  .media-strip video {
+    width: 100%;
+    height: 70vh;
+    max-height: 600px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .media-strip video {
+    pointer-events: none;
+    cursor: pointer;
+  }
+
+  @media (max-width: 767px) {
+    .media-strip {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 250px 250px;
+    }
+
+    .media-strip video:first-child { grid-area: 1 / 1; }
+    .media-strip img { grid-area: 1 / 2; }
+    .media-strip video:last-of-type { grid-column: 1 / -1; }
+
+    .media-strip img,
+    .media-strip video {
+      height: 100%;
+      max-height: none;
+    }
+  }
+</style>

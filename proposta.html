@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposta — Maceda Surf Camp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #1A7A6D;
+      --color-primary-hover: #14665B;
+      --color-accent: #E8723A;
+      --color-accent-hover: #D4612D;
+      --color-dark: #1B2A3D;
+      --color-text: #3D4F5F;
+      --color-text-light: #6B8299;
+      --color-bg: #F5F0EB;
+      --color-bg-alt: #EDE6DD;
+      --color-white: #FAFAF7;
+      --color-sand: #E8E0D5;
+      --font-heading: 'Bebas Neue', sans-serif;
+      --font-body: 'Manrope', system-ui, -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.7;
+      color: var(--color-dark);
+      background-color: var(--color-bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      color: var(--color-dark);
+      text-transform: uppercase;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: 0.04em;
+    }
+
+    h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 1.5rem; }
+    h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); margin-bottom: 0.75rem; }
+
+    p, li {
+      font-size: 1.05rem;
+      font-weight: 500;
+      line-height: 1.75;
+      color: var(--color-text);
+    }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover { color: var(--color-primary-hover); }
+
+    ul { list-style: none; }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, var(--color-dark) 0%, #0d1f30 60%, var(--color-primary) 100%);
+      padding: 5rem 1.5rem 4rem;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      color: var(--color-white);
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero .label {
+      display: inline-block;
+      background: var(--color-accent);
+      color: var(--color-white);
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 1.2rem 0.25rem;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero .date {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      margin-top: 1.5rem;
+    }
+
+    /* Sections */
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section--alt {
+      background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-sand) 100%);
+    }
+
+    .section--dark {
+      background-color: var(--color-dark);
+      color: var(--color-white);
+    }
+
+    .section--dark h2,
+    .section--dark h3 {
+      color: var(--color-white);
+    }
+
+    .section--dark p,
+    .section--dark li {
+      color: rgba(255,255,255,0.85);
+    }
+
+    .section--white {
+      background-color: var(--color-white);
+    }
+
+    /* Intro */
+    .intro {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .intro p {
+      margin-bottom: 1rem;
+    }
+
+    /* Service cards */
+    .services {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--color-white);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .service-card h3 {
+      color: var(--color-primary);
+    }
+
+    .service-card .price {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      color: var(--color-accent);
+      margin: 0.75rem 0 0.5rem;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .service-card .price-detail {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card ul {
+      margin-top: 0.75rem;
+    }
+
+    .service-card li {
+      padding: 0.3rem 0 0.3rem 1.5rem;
+      position: relative;
+      font-size: 0.95rem;
+    }
+
+    .service-card li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.7rem;
+      width: 8px;
+      height: 8px;
+      background: var(--color-primary);
+      border-radius: 50%;
+    }
+
+    .service-card--highlight {
+      border: 2px solid var(--color-primary);
+      position: relative;
+    }
+
+    .service-card--highlight::after {
+      content: 'RECOMENDADO';
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--color-primary);
+      color: var(--color-white);
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      padding: 0.25rem 0.75rem 0.15rem;
+      border-radius: 3px;
+    }
+
+    /* Options grid */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    /* Table */
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background: var(--color-white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      table-layout: fixed;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 1rem 1.25rem;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    .price-table thead th {
+      background: var(--color-dark);
+      color: var(--color-white);
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .price-table tbody tr {
+      border-bottom: 1px solid var(--color-sand);
+    }
+
+    .price-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .price-table .total-row {
+      background: var(--color-bg-alt);
+      font-weight: 700;
+    }
+
+    .price-table .total-row td {
+      color: var(--color-dark);
+      font-weight: 700;
+    }
+
+    .price-table .value {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: var(--color-accent);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .price-table td {
+      color: var(--color-text);
+    }
+
+    .price-table .total-row td {
+      color: var(--color-dark);
+    }
+
+    /* Steps */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .step {
+      background: rgba(255,255,255,0.08);
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .step__number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: var(--color-accent);
+      color: var(--color-white);
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      border-radius: 50%;
+      margin-bottom: 0.75rem;
+    }
+
+    .step p {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* Checklist */
+    .checklist {
+      margin-top: 1rem;
+    }
+
+    .checklist li {
+      padding: 0.5rem 0 0.5rem 2rem;
+      position: relative;
+      font-size: 1rem;
+    }
+
+    .checklist li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--color-primary);
+      border-radius: 4px;
+    }
+
+    /* Note box */
+    .note {
+      background: rgba(26, 122, 109, 0.08);
+      border-left: 4px solid var(--color-primary);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+    }
+
+    .note p {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .note strong {
+      color: var(--color-dark);
+    }
+
+    /* Highlight box */
+    .highlight-box {
+      background: var(--color-white);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      margin-top: 1.5rem;
+    }
+
+    .highlight-box .price {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      color: var(--color-accent);
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+
+    .highlight-box .price-sub {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      margin-top: 0.25rem;
+    }
+
+    /* Divider */
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--color-primary);
+      border: none;
+      margin: 1.5rem 0;
+    }
+
+    /* Tags */
+    .tag {
+      display: inline-block;
+      background: var(--color-primary);
+      color: var(--color-white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+      margin-right: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .tag--accent {
+      background: var(--color-accent);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--color-dark);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .footer p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.85rem;
+    }
+
+    .footer a {
+      color: var(--color-accent);
+    }
+
+    /* Payment */
+    .payment-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .payment-card {
+      background: var(--color-white);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .payment-card h3 {
+      font-size: 1.2rem;
+      color: var(--color-text-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .payment-card .price {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      color: var(--color-accent);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .payment-card .note-text {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      margin-top: 0.25rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .payment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 4rem 1.5rem 3rem;
+      }
+
+      .section {
+        padding: 3rem 0;
+      }
+
+      .price-table th,
+      .price-table td {
+        padding: 0.5rem 0.5rem;
+        font-size: 0.8rem;
+      }
+
+      .price-table .value {
+        font-size: 0.9rem;
+      }
+
+      .price-table thead th {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media print {
+      body { background: white; }
+      .hero { min-height: auto; padding: 2rem 1.5rem; }
+      .section { padding: 2rem 0; }
+      .service-card, .payment-card, .highlight-box { box-shadow: none; border: 1px solid #ddd; }
+      .service-card:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__content">
+      <span class="label">Proposta de Servicos</span>
+      <h1>Maceda Surf Camp</h1>
+      <p>Presenca digital, reservas e promocao online</p>
+      <p class="date">18 de Marco de 2026</p>
+    </div>
+  </section>
+
+  <!-- RESUMO DE INVESTIMENTO -->
+  <section class="section section--dark">
+    <div class="container">
+      <h2>Resumo do Investimento</h2>
+
+      <h3 style="color: rgba(255,255,255,0.6); margin-bottom: 0.75rem;">Parte 1 &mdash; Lancamento</h3>
+      <table class="price-table" style="box-shadow: none;">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Landing Page + 3 idiomas</td>
+            <td class="value">650 &euro;</td>
+          </tr>
+          <tr>
+            <td>Gestao PPC (Google Ads e Meta) &mdash; 1.&ordm; mes</td>
+            <td class="value">600&nbsp;&euro;</td>
+          </tr>
+          <tr>
+            <td>Gestao PPC &mdash; meses seguintes</td>
+            <td class="value">225&nbsp;&euro;/mes</td>
+          </tr>
+          <tr class="total-row">
+            <td>Total lancamento</td>
+            <td class="value">1.250 &euro;</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="color: rgba(255,255,255,0.6); margin-top: 2rem; margin-bottom: 0.75rem;">Parte 2 &mdash; Site Completo (opcional)</h3>
+      <table class="price-table" style="box-shadow: none;">
+        <thead>
+          <tr>
+            <th>Opcao</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Opcao A: Replica do site anterior + 3 idiomas</td>
+            <td class="value">800 &euro;</td>
+          </tr>
+          <tr>
+            <td>Opcao B: Expansao da landing page + 3 idiomas</td>
+            <td class="value">1.700 &euro;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- O QUE PRECISO DE TI -->
+  <section class="section">
+    <div class="container">
+      <h2>O que Preciso de Ti</h2>
+      <ul class="checklist">
+        <li>Acesso ao dominio <strong>macedasurfcamp.eu</strong></li>
+        <li>Fotos, descricoes e precos dos quartos e espacos</li>
+        <li>Videos e fotos de qualidade &mdash; prioritario: pessoas a divertir-se, bom tempo, e preferencialmente mais mulheres que homens na imagem</li>
+        <li>Dados de faturacao (para emissao de recibo)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONDICOES DE PAGAMENTO -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2>Pagamento</h2>
+      <p style="margin-bottom: 1rem;">Com os dados de faturacao emito recibo. Com metade do valor pago, comeco a trabalhar. Depois de aprovado e com o restante liquidado, publico o site.</p>
+
+      <h3 style="margin-top: 1.5rem;">Parte 1 &mdash; Lancamento</h3>
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Adjudicacao</th>
+            <th>Aprovacao</th>
+            <th>Voucher</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sem voucher</td>
+            <td class="value">625&nbsp;&euro;</td>
+            <td class="value">625&nbsp;&euro;</td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>Com voucher</td>
+            <td class="value">400&nbsp;&euro;</td>
+            <td class="value">400&nbsp;&euro;</td>
+            <td class="value">450&nbsp;&euro;</td>
+          </tr>
+          <tr style="border-top: 2px solid var(--color-sand);">
+            <td>A partir do 2.&ordm; mes</td>
+            <td colspan="3" class="value">225&nbsp;&euro;/mes &mdash; gestao PPC (Google Ads e Meta)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top: 1.5rem;">Parte 2 &mdash; Site Completo (opcional)</h3>
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Adjudicacao</th>
+            <th>Aprovacao</th>
+            <th>Voucher</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Opcao A &mdash; sem voucher</td>
+            <td class="value">400&nbsp;&euro;</td>
+            <td class="value">400&nbsp;&euro;</td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>Opcao A &mdash; com voucher</td>
+            <td class="value">250&nbsp;&euro;</td>
+            <td class="value">250&nbsp;&euro;</td>
+            <td class="value">300&nbsp;&euro;</td>
+          </tr>
+          <tr>
+            <td>Opcao B &mdash; sem voucher</td>
+            <td class="value">850&nbsp;&euro;</td>
+            <td class="value">850&nbsp;&euro;</td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>Opcao B &mdash; com voucher</td>
+            <td class="value">500&nbsp;&euro;</td>
+            <td class="value">500&nbsp;&euro;</td>
+            <td class="value">700&nbsp;&euro;</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note" style="margin-top: 1.5rem;">
+        <p><strong>Voucher:</strong> Para usar no Maceda Surf Camp ou no Surfing Life Club.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETALHES: LANDING PAGE -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2>Fase 1 &mdash; Landing Page</h2>
+      <div class="service-card">
+        <h3>Landing Page Multilingue</h3>
+        <div class="price">650 &euro;</div>
+        <div class="price-detail">Inclui 1 idioma (PT). Cada idioma extra custa 50&nbsp;&euro; (EN, FR, DE)</div>
+        <ul>
+          <li>Optimizado para performance, SEO e mobile</li>
+          <li>4 idiomas: PT, EN, FR, DE</li>
+          <li>Publicacao no dominio macedasurfcamp.eu</li>
+          <li>Pronto a lancar</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETALHES: SITE COMPLETO -->
+  <section class="section">
+    <div class="container">
+      <h2>Fase 2 &mdash; Site Completo (opcional)</h2>
+      <p style="margin-bottom: 1.5rem;">Disponivel a partir do inicio do proximo mes. Duas opcoes:</p>
+
+      <div class="options-grid">
+        <div class="service-card">
+          <h3>Opcao A: Replica do Site Anterior</h3>
+          <div class="price">800 &euro;</div>
+          <div class="price-detail">Inclui 1 idioma (PT). Cada idioma extra custa 100&nbsp;&euro; (EN, FR, DE)</div>
+          <ul>
+            <li>Reconstrucao do site antigo com design limpo</li>
+            <li>4 idiomas: PT, EN, FR, DE</li>
+            <li>Estrutura e conteudos do site original</li>
+            <li>Optimizado para performance, SEO e mobile</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <h3>Opcao B: Expansao da Landing Page</h3>
+          <div class="price">1.700 &euro;</div>
+          <div class="price-detail">Inclui 1 idioma (PT). Cada idioma extra custa 100&nbsp;&euro; (EN, FR, DE)</div>
+          <ul>
+            <li>Site completo a partir da landing page actual</li>
+            <li>Paginas adicionais (quartos, actividades, galeria, etc.)</li>
+            <li>4 idiomas: PT, EN, FR, DE</li>
+            <li>Blog integrado para SEO</li>
+            <li>Maior potencial de conversao</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETALHES: RESERVAS -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2>Sistema de Reservas &mdash; Hightide</h2>
+      <p style="margin-bottom: 1rem;">Plataforma profissional de reservas, integrada no site e com gestao de canais. <strong>Esta e uma despesa separada, paga directamente por ti ao Hightide</strong> (precos de tabela):</p>
+
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Componente</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hightide Pro (personalizacao completa)</td>
+            <td class="value">99 &euro;/mes</td>
+          </tr>
+          <tr>
+            <td>Channel Manager (Booking, Airbnb, etc.)</td>
+            <td class="value">40 &euro;/mes</td>
+          </tr>
+          <tr class="total-row">
+            <td>Total mensal</td>
+            <td class="value">139 &euro;/mes</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <p><strong>Como funciona:</strong> A pessoa responsavel pelo backoffice das reservas configura o Hightide: upload de fotos, descricoes dos quartos, precos, e a parte burocratica. Eu trato da integracao com o site.</p>
+        <p>O plano <strong>Pro</strong> permite personalizacao total. O <strong>Channel Manager</strong> sincroniza com Booking.com, Airbnb e outras plataformas &mdash; evitando overbooking e centralizando a gestao.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETALHES: ADS -->
+  <section class="section">
+    <div class="container">
+      <h2>Publicidade Online &mdash; Google Ads e Meta</h2>
+      <p style="margin-bottom: 1rem;">Campanhas nos 3 mercados prioritarios (EN, FR, DE).</p>
+
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Periodo</th>
+            <th>Valor</th>
+            <th>Detalhe</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.&ordm; mes (lancamento)</td>
+            <td class="value">600 &euro;</td>
+            <td>3 idiomas &times; 200&euro;</td>
+          </tr>
+          <tr>
+            <td>A partir do 2.&ordm; mes</td>
+            <td class="value">225 &euro;/mes</td>
+            <td>3 idiomas &times; 75&euro;</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <p><strong>Nota:</strong> Estes valores incluem a gestao das campanhas. O orcamento de media (valor pago ao Google e ao Meta) e separado, definido de acordo com os objectivos, e pago directamente por ti as plataformas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IDIOMAS -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2>Porquê EN, DE e FR?</h2>
+      <p style="margin-bottom: 1rem;">Com base no estudo SEO que realizei, estes sao os 3 mercados com maior potencial:</p>
+      <div class="note" style="margin-top: 0;">
+        <p><strong>Ingles:</strong> mercado internacional, essencial para qualquer surf camp &mdash; turistas UK, Irlanda, Escandinavos e resto do mundo.</p>
+        <p><strong>Alemao:</strong> 13.400 pesquisas/mes, baixa concorrencia local para surf camps na zona do Porto/Maceda.</p>
+        <p><strong>Frances:</strong> 6.640 pesquisas/mes, mercado "blue ocean" &mdash; baixa concorrencia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTAS -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2>Notas</h2>
+      <div class="note" style="margin-top: 0;">
+        <p><strong>Performance e SEO:</strong> Todas as paginas sao rapidas, responsivas e optimizadas para performance, SEO e mobile.</p>
+      </div>
+      <div class="note">
+        <p><strong>Design:</strong> O design nao esta incluido como servico separado &mdash; esta integrado na construcao do site. Ja viste o nivel de qualidade na landing page que desenvolvi; pior do que aquilo, nao faço.</p>
+      </div>
+      <div class="note">
+        <p><strong>Copywriting:</strong> Faco copy com qualidade profissional, mas nao ao nivel de um Lac Campbell. Para a grande maioria dos projectos, e mais do que suficiente.</p>
+      </div>
+      <div class="note">
+        <p><strong>Traducoes:</strong> As traducoes estao incluidas, mas recomendo que passem por uma revisao de alguem nativo em cada idioma. Ha muitos freelancers que fazem esse trabalho por menos de 20&euro; por cada 1.000 palavras &mdash; e um investimento pequeno que garante qualidade linguistica.</p>
+      </div>
+      <div class="note">
+        <p><strong>Propriedade:</strong> O site e desenvolvido em <strong>Astro</strong> (framework moderna e rapida) e fica propriedade total do Maceda Surf Camp. Todos os ficheiros do projecto sao entregues.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROXIMOS PASSOS -->
+  <section class="section section--dark">
+    <div class="container" style="text-align: center;">
+      <h2>Proximos Passos</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step__number">1</span>
+          <p style="color: rgba(255,255,255,0.85);">Aprovar a proposta e fazer o pagamento inicial</p>
+        </div>
+        <div class="step">
+          <span class="step__number">2</span>
+          <p style="color: rgba(255,255,255,0.85);">Enviar fotos, videos, descricoes e acesso ao dominio</p>
+        </div>
+        <div class="step">
+          <span class="step__number">3</span>
+          <p style="color: rgba(255,255,255,0.85);">Lanco a landing page &mdash; o site comeca a trabalhar por ti</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Proposta apresentada por <a href="mailto:mail@ricardopons.eu">Ricardo Pons</a></p>
+    <p style="margin-top: 0.5rem;">Valida por 30 dias a partir de 18 de Marco de 2026</p>
+  </footer>
+
+</body>
+</html>

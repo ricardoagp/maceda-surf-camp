@@ -1,0 +1,169 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const posts = (await getCollection('journal', ({ data }) => !data.draft))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+---
+
+<Layout title="Journal — Surf Stories from Northern Portugal">
+  <Header />
+  <main>
+    <section class="hero-compact">
+      <div class="hero-compact__overlay"></div>
+      <div class="hero-compact__content">
+        <h1>Journal</h1>
+        <p>Stories, guides and tips from our life on the Portuguese coast.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="journal-grid">
+          {posts.map((post) => (
+            <a href={`/journal/${post.id}/`} class="journal-card">
+              <div class="journal-card__image">
+                <img src={post.data.image} alt={post.data.imageAlt} loading="lazy" />
+              </div>
+              <div class="journal-card__body">
+                <time class="journal-card__date" datetime={post.data.date}>
+                  {new Date(post.data.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+                </time>
+                <h2 class="journal-card__title">{post.data.title}</h2>
+                <p class="journal-card__excerpt">{post.data.description}</p>
+                <span class="journal-card__link">Read More &rarr;</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .hero-compact {
+    position: relative;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('/images/testimonials-banner.webp') center/cover no-repeat;
+    padding: 7rem 1.5rem 3rem;
+  }
+
+  .hero-compact__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(26, 122, 109, 0.45) 0%, rgba(27, 42, 61, 0.75) 100%);
+  }
+
+  .hero-compact__content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+  }
+
+  .hero-compact h1 {
+    color: var(--color-white);
+    font-size: clamp(2.4rem, 6vw, 3.5rem);
+    margin-bottom: 0.75rem;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-compact p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+  }
+
+  .journal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2.5rem;
+  }
+
+  .journal-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-white);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .journal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .journal-card__image {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+  }
+
+  .journal-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+
+  .journal-card:hover .journal-card__image img {
+    transform: scale(1.05);
+  }
+
+  .journal-card__body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .journal-card__date {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .journal-card__title {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    color: var(--color-dark);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .journal-card__excerpt {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .journal-card__link {
+    margin-top: 1rem;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-primary);
+    transition: color 0.3s;
+  }
+
+  .journal-card:hover .journal-card__link {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .journal-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

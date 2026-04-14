@@ -1,0 +1,506 @@
+{
+  "meta": {
+    "client": "Maceda Surf Camp",
+    "domain": "macedasurfcamp.com",
+    "date": "2026-03-28",
+    "languages": ["en", "fr", "de"],
+    "notes": "Content map curated by Claude based on DataForSEO keyword data + competitor analysis. Pages marked 'exists' already have content live."
+  },
+  "topical_map": {
+    "description": "4 topic pillars aligned with business offerings. Each pillar has a hub page + supporting pages/posts.",
+    "pillars": [
+      {
+        "name": "Surf Camp & Accommodation",
+        "hub": "/",
+        "description": "Core commercial pages — what we are, what we offer, where you stay. Captures high-intent 'surf camp portugal' cluster.",
+        "pages": ["/", "/concept/", "/accomodation/"]
+      },
+      {
+        "name": "Surf Lessons & Experience",
+        "hub": "/surf/",
+        "description": "Surf offering detail. Captures 'surf lessons portugal', 'learn to surf', 'beginner surf' clusters.",
+        "pages": ["/surf/", "/surfing-northern-portugal-for-beginners-the-ultimate-guide/", "/surfing-around-porto-here-are-our-5-favourite-spots/", "/the-best-time-to-surf-in-portugal-updated-2024/"]
+      },
+      {
+        "name": "Yoga, Wellness & Activities",
+        "hub": "/activities/",
+        "description": "Non-surf offering. Captures 'surf yoga retreat portugal', 'yoga and surf', 'activities porto' clusters.",
+        "pages": ["/activities/", "/yoga-wellness/", "/cool-things-to-do-in-and-around-porto-this-summer/"]
+      },
+      {
+        "name": "Destination & Travel",
+        "hub": "/journal/",
+        "description": "Informational blog content. Captures 'surfing north portugal', 'maceda', 'porto guide', 'morocco' + seasonal queries.",
+        "pages": ["/journal/", "/8-reasons-why-maceda-is-a-must-visit-surf-town-in-portugal/", "/morocco-trip/", "/the-best-time-to-surf-in-morocco/"]
+      }
+    ]
+  },
+  "pages": [
+    {
+      "url": "/",
+      "status": "exists",
+      "pillar": "Surf Camp & Accommodation",
+      "content_type": "homepage",
+      "title_en": "Maceda Surf Camp — Surf Camp in Northern Portugal",
+      "title_fr": "Maceda Surf Camp — Camp de Surf au Nord du Portugal",
+      "title_de": "Maceda Surf Camp — Surfcamp in Nordportugal",
+      "h1_en": "Surf Camp in Northern Portugal",
+      "primary_kw": {
+        "en": {"keyword": "surf camp portugal", "volume": 880, "kd": 16},
+        "fr": {"keyword": "surf camp portugal", "volume": 720, "kd": 0},
+        "de": {"keyword": "surfcamp portugal", "volume": 6600, "kd": 0}
+      },
+      "secondary_kw": [
+        "surf camp porto", "surf camp north portugal", "maceda surf camp",
+        "surfcamp porto", "surf camp portugal porto",
+        "surf camp near porto", "portugal surf camp"
+      ],
+      "intent": "commercial/transactional",
+      "priority": "P1",
+      "notes": "Main landing page. Must rank for the core 'surf camp portugal' cluster. DE market is huge (6600 vol)."
+    },
+    {
+      "url": "/concept/",
+      "status": "exists",
+      "pillar": "Surf Camp & Accommodation",
+      "content_type": "landing_page",
+      "title_en": "Our Concept — Back-to-Nature Surf Camp Portugal",
+      "title_fr": "Notre Concept — Camp de Surf Nature au Portugal",
+      "title_de": "Unser Konzept — Natur-Surfcamp Portugal",
+      "primary_kw": {
+        "en": {"keyword": "eco surf camp portugal", "volume": 10, "kd": 0},
+        "fr": {"keyword": "camp de surf portugal", "volume": 30, "kd": 0},
+        "de": {"keyword": "surfcamp portugal", "volume": 6600, "kd": 0}
+      },
+      "secondary_kw": [
+        "boutique surf camp portugal", "surf lodge portugal", "surf hostel portugal",
+        "surfcamp portugal alleinreisende", "surfcamp portugal erwachsene"
+      ],
+      "intent": "commercial",
+      "priority": "P2",
+      "notes": "Differentiator page. Position eco/nature angle. Supports homepage."
+    },
+    {
+      "url": "/accomodation/",
+      "status": "exists",
+      "pillar": "Surf Camp & Accommodation",
+      "content_type": "landing_page",
+      "title_en": "Accommodation — Surf Hostel in Maceda, Portugal",
+      "title_fr": "Hébergement — Surf House au Portugal",
+      "title_de": "Unterkunft — Surf Hostel Portugal",
+      "primary_kw": {
+        "en": {"keyword": "surf hostel portugal", "volume": 140, "kd": 15},
+        "fr": {"keyword": "surf house portugal", "volume": 70, "kd": 0},
+        "de": {"keyword": "surf hostel portugal", "volume": 210, "kd": 0}
+      },
+      "secondary_kw": [
+        "portugal surf hostel", "surf hostels in portugal", "surfing hostel portugal",
+        "surfen portugal hotel", "surf house portugal", "surfhouse portugal",
+        "surf lodge portugal", "glamping surf camp portugal"
+      ],
+      "intent": "transactional",
+      "priority": "P1",
+      "notes": "High commercial value. CPC alto em EN (2.85). Clusters: hostel, house, lodge — all accommodation-intent."
+    },
+    {
+      "url": "/surf/",
+      "status": "exists",
+      "pillar": "Surf Lessons & Experience",
+      "content_type": "hub_page",
+      "title_en": "Surf Lessons in Portugal — All Levels | Maceda Surf Camp",
+      "title_fr": "Cours de Surf au Portugal — Tous Niveaux",
+      "title_de": "Surfkurse in Portugal — Alle Levels",
+      "primary_kw": {
+        "en": {"keyword": "surf lessons portugal", "volume": 1000, "kd": 5},
+        "fr": {"keyword": "cours de surf portugal", "volume": 30, "kd": 0},
+        "de": {"keyword": "surf lessons portugal", "volume": 90, "kd": 12}
+      },
+      "secondary_kw": [
+        "surf lessons in portugal", "surfing lessons portugal", "surf courses portugal",
+        "surf lessons porto portugal", "learn to surf portugal",
+        "surf camp for beginners portugal", "beginner surf camp portugal",
+        "surfen lernen portugal", "portugal surfen lernen",
+        "surfcamp portugal anfänger", "surfen portugal anfänger",
+        "stage de surf portugal", "stage de surf au portugal"
+      ],
+      "intent": "transactional",
+      "priority": "P1",
+      "notes": "Biggest quick win: 'surf lessons portugal' has 1000 vol and KD 5! Low competition, high volume. Also captures beginner/learn clusters in all 3 languages."
+    },
+    {
+      "url": "/activities/",
+      "status": "exists",
+      "pillar": "Yoga, Wellness & Activities",
+      "content_type": "hub_page",
+      "title_en": "Activities & Adventures — More Than Surfing",
+      "title_fr": "Activités & Aventures — Plus que du Surf",
+      "title_de": "Aktivitäten & Abenteuer — Mehr als Surfen",
+      "primary_kw": {
+        "en": {"keyword": "surf holidays portugal", "volume": 390, "kd": 0},
+        "fr": {"keyword": "vacances surf portugal", "volume": 10, "kd": 0},
+        "de": {"keyword": "surfurlaub portugal", "volume": 30, "kd": 0}
+      },
+      "secondary_kw": [
+        "portugal surfing holiday", "surf holidays in portugal",
+        "surfurlaub in portugal", "surfurlaub europa",
+        "cycling in porto", "biking in porto"
+      ],
+      "intent": "commercial",
+      "priority": "P2",
+      "notes": "Captures 'surf holidays' intent — people looking for more than just lessons. Links to yoga and blog posts."
+    },
+    {
+      "url": "/yoga-wellness/",
+      "status": "exists",
+      "pillar": "Yoga, Wellness & Activities",
+      "content_type": "landing_page",
+      "title_en": "Yoga & Surf Retreat Portugal — Wellness at Maceda",
+      "title_fr": "Retraite Yoga & Surf au Portugal",
+      "title_de": "Yoga & Surf Retreat Portugal",
+      "primary_kw": {
+        "en": {"keyword": "surf yoga retreat portugal", "volume": 210, "kd": 10},
+        "fr": {"keyword": "yoga surf retreat portugal", "volume": 20, "kd": 66},
+        "de": {"keyword": "surf and yoga retreat portugal", "volume": 260, "kd": 8}
+      },
+      "secondary_kw": [
+        "yoga and surf retreat portugal", "yoga surfing retreat portugal",
+        "portugal surf and yoga retreat", "surf and yoga portugal",
+        "yoga surf portugal", "surf and yoga camp portugal",
+        "surf yoga camp portugal", "yoga und surf camp portugal",
+        "surf und yoga retreat portugal", "surf und yoga camp",
+        "surf yoga portugal", "surf & yoga portugal",
+        "yoga retreat portugal", "wellness retreat portugal",
+        "retraite yoga surf portugal", "surf et yoga portugal",
+        "yoga en surf portugal", "stage surf yoga portugal"
+      ],
+      "intent": "commercial/transactional",
+      "priority": "P1",
+      "notes": "Premium segment. High volume across all 3 languages (EN 210, DE 260). Competitors (Golden Waves) rank well here — opportunity. CPC alto = high commercial value."
+    },
+    {
+      "url": "/morocco-trip/",
+      "status": "exists",
+      "pillar": "Destination & Travel",
+      "content_type": "landing_page",
+      "title_en": "Morocco Surf Trip from Portugal — Maceda Surf Camp",
+      "title_fr": "Voyage Surf au Maroc — Maceda Surf Camp",
+      "title_de": "Marokko Surf Trip ab Portugal",
+      "primary_kw": {
+        "en": {"keyword": "morocco surf trip", "volume": 0, "kd": 0},
+        "de": {"keyword": "surfen in marokko", "volume": 260, "kd": 0}
+      },
+      "secondary_kw": [],
+      "intent": "commercial",
+      "priority": "P3",
+      "notes": "Niche offering. DE market has volume for 'surfen in marokko' (260). Cross-sell from surf camp."
+    },
+    {
+      "url": "/faq/",
+      "status": "exists",
+      "pillar": "Surf Camp & Accommodation",
+      "content_type": "faq_page",
+      "title_en": "FAQ — Maceda Surf Camp Portugal",
+      "title_fr": "FAQ — Maceda Surf Camp Portugal",
+      "title_de": "FAQ — Maceda Surf Camp Portugal",
+      "primary_kw": {
+        "en": {"keyword": "surf camp portugal", "volume": 880, "kd": 16}
+      },
+      "secondary_kw": [
+        "surf camp portugal reviews", "surf camp portugal beginner",
+        "best surf camp in portugal"
+      ],
+      "intent": "informational",
+      "priority": "P2",
+      "notes": "Supports trust signals. Answer common questions. Can capture PAA snippets."
+    },
+    {
+      "url": "/journal/",
+      "status": "exists",
+      "pillar": "Destination & Travel",
+      "content_type": "blog_index",
+      "title_en": "Journal — Surf Stories from Northern Portugal",
+      "primary_kw": {},
+      "secondary_kw": [],
+      "intent": "informational",
+      "priority": "P3",
+      "notes": "Blog listing page. Internal linking hub for all blog posts."
+    },
+    {
+      "url": "/8-reasons-why-maceda-is-a-must-visit-surf-town-in-portugal/",
+      "status": "exists",
+      "pillar": "Destination & Travel",
+      "content_type": "blog_post",
+      "title_en": "8 Reasons Why Maceda Is a Must-Visit Surf Town in Portugal",
+      "primary_kw": {
+        "en": {"keyword": "maceda surf camp", "volume": 40, "kd": 0},
+        "de": {"keyword": "surfcamp nordportugal", "volume": 70, "kd": 0}
+      },
+      "secondary_kw": [
+        "surf camp north portugal", "surfing north portugal",
+        "surf camp near porto", "maceda portugal"
+      ],
+      "intent": "informational",
+      "priority": "P2",
+      "notes": "Key brand/location post. Only content targeting 'maceda' directly. Should be optimized to rank for 'surfcamp nordportugal' (DE 70 vol)."
+    },
+    {
+      "url": "/cool-things-to-do-in-and-around-porto-this-summer/",
+      "status": "exists",
+      "pillar": "Yoga, Wellness & Activities",
+      "content_type": "blog_post",
+      "title_en": "Cool Things to Do in and Around Porto This Summer",
+      "primary_kw": {
+        "en": {"keyword": "porto surf", "volume": 320, "kd": 0},
+        "fr": {"keyword": "porto surf", "volume": 320, "kd": 0}
+      },
+      "secondary_kw": [
+        "surf in porto", "surfing porto", "porto surfing",
+        "cycling in porto", "biking in porto",
+        "surfen porto", "porto surfen"
+      ],
+      "intent": "informational",
+      "priority": "P2",
+      "notes": "Captures 'porto surf/surfing' queries (320 vol). Good internal link to /surf/ and homepage."
+    },
+    {
+      "url": "/surfing-around-porto-here-are-our-5-favourite-spots/",
+      "status": "exists",
+      "pillar": "Surf Lessons & Experience",
+      "content_type": "blog_post",
+      "title_en": "Surfing Around Porto — Our 5 Favourite Spots",
+      "primary_kw": {
+        "en": {"keyword": "surf spots near porto", "volume": 20, "kd": 0}
+      },
+      "secondary_kw": [
+        "surfing near porto", "surf near porto", "surfing near porto portugal",
+        "porto surfing", "surfing porto portugal",
+        "surfen porto", "porto surfen anfänger"
+      ],
+      "intent": "informational",
+      "priority": "P2",
+      "notes": "Supports /surf/ hub. Good for local SEO and 'near porto' queries."
+    },
+    {
+      "url": "/surfing-northern-portugal-for-beginners-the-ultimate-guide/",
+      "status": "exists",
+      "pillar": "Surf Lessons & Experience",
+      "content_type": "blog_post",
+      "title_en": "Surfing Northern Portugal for Beginners — The Ultimate Guide",
+      "primary_kw": {
+        "en": {"keyword": "learn to surf portugal", "volume": 30, "kd": 32},
+        "de": {"keyword": "surfen portugal anfänger", "volume": 260, "kd": 0}
+      },
+      "secondary_kw": [
+        "beginner surf camp portugal", "surf camp portugal beginner",
+        "portugal learn to surf", "best place to learn to surf in portugal",
+        "where to learn to surf in portugal", "porto surfing beginners",
+        "surfen lernen portugal", "portugal surfen anfänger",
+        "surfcamp portugal anfänger", "surfen in portugal für anfänger"
+      ],
+      "intent": "informational",
+      "priority": "P1",
+      "notes": "HIGH VALUE: 'surfen portugal anfänger' has 260 vol in DE with KD 0! This post should be translated/optimized for DE. Also captures EN beginner queries."
+    },
+    {
+      "url": "/the-best-time-to-surf-in-portugal-updated-2024/",
+      "status": "exists",
+      "pillar": "Surf Lessons & Experience",
+      "content_type": "blog_post",
+      "title_en": "The Best Time to Surf in Portugal (Updated 2026)",
+      "primary_kw": {
+        "en": {"keyword": "surf holidays portugal", "volume": 390, "kd": 0},
+        "de": {"keyword": "surfen portugal beste zeit", "volume": 30, "kd": 0}
+      },
+      "secondary_kw": [
+        "surf camp portugal september", "surf camp portugal march",
+        "surf camp portugal april", "surf camp portugal october",
+        "surfen portugal oktober", "surfen portugal märz",
+        "surfen portugal august", "portugal surfen beste zeit"
+      ],
+      "intent": "informational",
+      "priority": "P2",
+      "notes": "Captures seasonal queries. Update title to 2026. Many seasonal keywords across all months."
+    },
+    {
+      "url": "/the-best-time-to-surf-in-morocco/",
+      "status": "exists",
+      "pillar": "Destination & Travel",
+      "content_type": "blog_post",
+      "title_en": "The Best Time to Surf in Morocco",
+      "primary_kw": {
+        "de": {"keyword": "surfen in marokko", "volume": 260, "kd": 0}
+      },
+      "secondary_kw": [],
+      "intent": "informational",
+      "priority": "P3",
+      "notes": "Supports Morocco trip page. DE has 260 vol for 'surfen in marokko'."
+    },
+    {
+      "url": "/terms-and-conditions/",
+      "status": "exists",
+      "pillar": "Surf Camp & Accommodation",
+      "content_type": "legal",
+      "title_en": "Terms & Conditions — Maceda Surf Camp",
+      "primary_kw": {},
+      "secondary_kw": [],
+      "intent": "navigational",
+      "priority": "P3",
+      "notes": "Legal page. No SEO value but required."
+    },
+    {
+      "url": "/best-surf-camps-in-portugal/",
+      "status": "new",
+      "pillar": "Surf Camp & Accommodation",
+      "content_type": "blog_post",
+      "title_en": "Best Surf Camps in Portugal (2026 Guide)",
+      "title_fr": "Meilleur Surf Camp au Portugal — Guide 2026",
+      "title_de": "Bestes Surfcamp Portugal — Guide 2026",
+      "primary_kw": {
+        "en": {"keyword": "best surf camp portugal", "volume": 90, "kd": 24},
+        "fr": {"keyword": "meilleur surf camp portugal", "volume": 10, "kd": 0},
+        "de": {"keyword": "best surfcamp portugal", "volume": 30, "kd": 0}
+      },
+      "secondary_kw": [
+        "best surf camp in portugal", "best surf camps in portugal",
+        "best surf camps portugal", "surf camp portugal best",
+        "portugal surf camp reviews", "surf camp portugal review",
+        "surfcamp portugal erfahrung", "surfcamp portugal vergleich",
+        "bestes surfcamp portugal", "bestes surfcamp in portugal"
+      ],
+      "intent": "commercial",
+      "priority": "P1",
+      "notes": "NEW PAGE. Classic comparison/listicle. Position Maceda as top pick among competitors. High CPC (3.35 EN). Include Golden Waves, Luhu, Oporto SC as competitors."
+    },
+    {
+      "url": "/surf-and-yoga-retreat-portugal/",
+      "status": "new",
+      "pillar": "Yoga, Wellness & Activities",
+      "content_type": "blog_post",
+      "title_en": "Surf and Yoga Retreat in Portugal — What to Expect",
+      "title_fr": "Retraite Surf et Yoga au Portugal — Guide Complet",
+      "title_de": "Surf und Yoga Retreat Portugal — Der Guide",
+      "primary_kw": {
+        "en": {"keyword": "yoga and surf retreat", "volume": 590, "kd": 24},
+        "fr": {"keyword": "surf and yoga retreat", "volume": 70, "kd": 0},
+        "de": {"keyword": "surf yoga retreat", "volume": 480, "kd": 0}
+      },
+      "secondary_kw": [
+        "yoga surfing retreat", "surfing yoga retreat", "yoga & surf retreats",
+        "surf and yoga retreats portugal", "surf and yoga camp",
+        "surf and yoga camps", "yoga surf camp",
+        "surf yoga retreats", "surf yoga meditation retreat",
+        "surf und yoga camp", "surf yoga camp"
+      ],
+      "intent": "informational/commercial",
+      "priority": "P1",
+      "notes": "NEW PAGE. Huge volume: EN 590, DE 480, FR 70. Broader than /yoga-wellness/ (which is our offering). This post captures the generic 'what is a surf yoga retreat' intent and funnels to our page. Links to /yoga-wellness/."
+    },
+    {
+      "url": "/surf-holidays-portugal/",
+      "status": "new",
+      "pillar": "Destination & Travel",
+      "content_type": "blog_post",
+      "title_en": "Surf Holidays in Portugal — The Complete Guide",
+      "title_fr": "Vacances Surf au Portugal — Le Guide Complet",
+      "title_de": "Surfurlaub Portugal — Der Komplette Guide",
+      "primary_kw": {
+        "en": {"keyword": "surf holidays portugal", "volume": 390, "kd": 0},
+        "fr": {"keyword": "vacances surf portugal", "volume": 10, "kd": 0},
+        "de": {"keyword": "portugal surfurlaub", "volume": 30, "kd": 0}
+      },
+      "secondary_kw": [
+        "surf holidays in portugal", "portugal surf holidays",
+        "portugal surfing holiday", "surf holiday portugal",
+        "surfing holiday portugal", "surfing holidays portugal",
+        "family surf holidays portugal", "surf holiday europe",
+        "surfurlaub in portugal", "surfurlaub europa",
+        "portugal urlaub surfen", "urlaub portugal surfen"
+      ],
+      "intent": "informational/commercial",
+      "priority": "P1",
+      "notes": "NEW PAGE. KD 0 with 390 vol in EN! Quick win. Covers what a surf holiday in Portugal looks like, best regions, what to pack, when to go. Funnels to homepage and /surf/."
+    },
+    {
+      "url": "/family-surf-camp-portugal/",
+      "status": "new",
+      "pillar": "Surf Camp & Accommodation",
+      "content_type": "blog_post",
+      "title_en": "Family Surf Camp Portugal — Surfing with Kids",
+      "title_fr": "Surf Camp Famille Portugal",
+      "title_de": "Familien Surfcamp Portugal — Surfen mit Kindern",
+      "primary_kw": {
+        "en": {"keyword": "family surf camp portugal", "volume": 20, "kd": 0},
+        "fr": {"keyword": "surf camp famille portugal", "volume": 20, "kd": 0},
+        "de": {"keyword": "familien surfcamp portugal", "volume": 110, "kd": 0}
+      },
+      "secondary_kw": [
+        "family surf holidays portugal", "portugal family surf camp",
+        "surf camp family portugal", "surfcamp mit kindern portugal",
+        "surfcamp portugal familie", "family surfcamp portugal",
+        "surfen mit kindern portugal"
+      ],
+      "intent": "commercial",
+      "priority": "P2",
+      "notes": "NEW PAGE. DE market has 110 vol (KD 0) for 'familien surfcamp portugal'. Niche but low competition. Also captures 'surfen mit kindern'."
+    }
+  ],
+  "internal_linking": {
+    "description": "Key internal linking relationships between pages",
+    "links": [
+      {"from": "/", "to": ["/surf/", "/accomodation/", "/yoga-wellness/", "/concept/"], "reason": "Homepage links to all pillars"},
+      {"from": "/surf/", "to": ["/surfing-northern-portugal-for-beginners-the-ultimate-guide/", "/surfing-around-porto-here-are-our-5-favourite-spots/", "/the-best-time-to-surf-in-portugal-updated-2024/"], "reason": "Hub links to supporting blog posts"},
+      {"from": "/yoga-wellness/", "to": ["/surf-and-yoga-retreat-portugal/"], "reason": "Service page links to informational guide"},
+      {"from": "/surf-and-yoga-retreat-portugal/", "to": ["/yoga-wellness/", "/accomodation/"], "reason": "Blog post funnels to service + booking"},
+      {"from": "/best-surf-camps-in-portugal/", "to": ["/", "/accomodation/", "/surf/"], "reason": "Listicle links to our core pages"},
+      {"from": "/surf-holidays-portugal/", "to": ["/", "/surf/", "/activities/", "/the-best-time-to-surf-in-portugal-updated-2024/"], "reason": "Guide links to all relevant pages"},
+      {"from": "/surfing-northern-portugal-for-beginners-the-ultimate-guide/", "to": ["/surf/", "/8-reasons-why-maceda-is-a-must-visit-surf-town-in-portugal/"], "reason": "Beginner guide links to lessons + location"},
+      {"from": "/family-surf-camp-portugal/", "to": ["/accomodation/", "/surf/", "/activities/"], "reason": "Family page links to core offerings"},
+      {"from": "/8-reasons-why-maceda-is-a-must-visit-surf-town-in-portugal/", "to": ["/", "/concept/", "/cool-things-to-do-in-and-around-porto-this-summer/"], "reason": "Location post links to homepage + Porto guide"},
+      {"from": "/cool-things-to-do-in-and-around-porto-this-summer/", "to": ["/activities/", "/surf/"], "reason": "Porto guide links to our activities + surf"}
+    ]
+  },
+  "priority_summary": {
+    "P1": [
+      "/ — Homepage (surf camp portugal: EN 880, DE 6600)",
+      "/surf/ — Surf Lessons (surf lessons portugal: EN 1000, KD 5)",
+      "/accomodation/ — Accommodation (surf hostel portugal: EN 140, DE 210)",
+      "/yoga-wellness/ — Yoga & Wellness (surf yoga retreat: EN 210, DE 260)",
+      "/surfing-northern-portugal-for-beginners-the-ultimate-guide/ — Beginners Guide (surfen portugal anfänger: DE 260, KD 0)",
+      "/best-surf-camps-in-portugal/ — NEW: Best Surf Camps listicle (EN 90, KD 24)",
+      "/surf-and-yoga-retreat-portugal/ — NEW: Yoga Retreat guide (EN 590, DE 480)",
+      "/surf-holidays-portugal/ — NEW: Surf Holidays guide (EN 390, KD 0)"
+    ],
+    "P2": [
+      "/concept/ — Concept (supports homepage)",
+      "/faq/ — FAQ (trust signals, PAA snippets)",
+      "/activities/ — Activities hub (surf holidays: EN 390)",
+      "/8-reasons-why-maceda-is-a-must-visit-surf-town-in-portugal/ — Maceda location post",
+      "/cool-things-to-do-in-and-around-porto-this-summer/ — Porto guide (porto surf: EN 320)",
+      "/surfing-around-porto-here-are-our-5-favourite-spots/ — Surf spots Porto",
+      "/the-best-time-to-surf-in-portugal-updated-2024/ — Seasonal guide",
+      "/family-surf-camp-portugal/ — NEW: Family surf camp (DE 110, KD 0)"
+    ],
+    "P3": [
+      "/morocco-trip/ — Morocco trip (niche)",
+      "/the-best-time-to-surf-in-morocco/ — Morocco timing (DE 260)",
+      "/journal/ — Blog index",
+      "/terms-and-conditions/ — Legal"
+    ]
+  },
+  "quick_wins": {
+    "description": "Keywords with high volume and low KD — easiest to rank for",
+    "items": [
+      {"keyword": "surf lessons portugal", "lang": "en", "volume": 1000, "kd": 5, "page": "/surf/"},
+      {"keyword": "surfcamp portugal", "lang": "de", "volume": 6600, "kd": 0, "page": "/"},
+      {"keyword": "surfen portugal", "lang": "de", "volume": 1600, "kd": 0, "page": "/"},
+      {"keyword": "surf camp portugal", "lang": "en", "volume": 880, "kd": 16, "page": "/"},
+      {"keyword": "surf camp portugal", "lang": "fr", "volume": 720, "kd": 0, "page": "/"},
+      {"keyword": "yoga retreat portugal", "lang": "de", "volume": 880, "kd": 0, "page": "/yoga-wellness/"},
+      {"keyword": "surf yoga retreat", "lang": "de", "volume": 480, "kd": 0, "page": "/yoga-wellness/"},
+      {"keyword": "surf holidays portugal", "lang": "en", "volume": 390, "kd": 0, "page": "/surf-holidays-portugal/"},
+      {"keyword": "surf camp porto", "lang": "de", "volume": 390, "kd": 0, "page": "/"},
+      {"keyword": "surfen portugal anfänger", "lang": "de", "volume": 260, "kd": 0, "page": "/surfing-northern-portugal-for-beginners-the-ultimate-guide/"},
+      {"keyword": "surf and yoga retreat portugal", "lang": "de", "volume": 260, "kd": 8, "page": "/surf-and-yoga-retreat-portugal/"}
+    ]
+  }
+}
